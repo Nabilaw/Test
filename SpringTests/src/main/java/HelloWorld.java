@@ -1,9 +1,12 @@
 /**
- * Created by nabil on 27.05.15.
+ * Created by nabil on 24.03.15.
  */
 public class HelloWorld {
 
-    public static void main(String[] argv) {
-        System.out.print("Hello World");
+    public static void main(String[] args) {
+        MessageRenderer messageRenderer = new StandardOutMsg();
+        MessageProvider messageProvider = new HelloWorldMessageProvider();
+        messageRenderer.setMessageProvider(messageProvider);
+        messageRenderer.render();
     }
 }
